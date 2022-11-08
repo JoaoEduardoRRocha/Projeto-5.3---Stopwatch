@@ -1,0 +1,49 @@
+/* configurações padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    font-size: 62.5%;
+    --text-color: rgb(33, 33, 37);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size:12rem;
+    font-weight: 50rem;
+    line-height: 14.8rem;
+
+    color: var(--text-color)
+}
+
+/* estilizando BUTTONS */
+.timer button {
+    background-color: white;
+    border: none;
+}
+
+.button-kind-sounds button {
+    border: none;
+}
+
+.button-kind-sounds button img {
+    width: 6rem;
+    height: 6rem;
+}
+
+/* posicionamento */
+main {
+    display: flex;
+    justify-content: center;
+    margin: 30rem auto;
+    max-width: 82rem;
+}
+
+.button-kind-sounds {
+    display: grid;
+    grid: repeat(2, 6rem) / auto-flow 6rem;
+    gap: 3.2rem;
+}
