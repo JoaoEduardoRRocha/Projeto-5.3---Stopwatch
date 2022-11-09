@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size:12rem;
+    font-size: 10rem;
     font-weight: 50rem;
     line-height: 14.8rem;
 
@@ -20,7 +20,7 @@ body {
 }
 
 /* estilizando BUTTONS */
-.timer button {
+.button-set button {
     background-color: white;
     border: none;
 }
@@ -30,20 +30,29 @@ body {
 }
 
 .button-kind-sounds button img {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 10rem;
 }
 
 /* posicionamento */
 main {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 30rem auto;
-    max-width: 82rem;
+    max-width: 820px;
+    gap: 192px;
+}
+
+.timer-group {
+    flex: 1; 
 }
 
 .button-kind-sounds {
     display: grid;
-    grid: repeat(2, 6rem) / auto-flow 6rem;
+    grid-template-columns: 6rem 6rem;
+    grid-template-rows: 6rem 6rem;
     gap: 3.2rem;
+
+    flex: 1;
 }
