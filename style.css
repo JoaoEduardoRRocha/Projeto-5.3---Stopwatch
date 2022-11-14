@@ -12,8 +12,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 10rem;
-    font-weight: 50rem;
+    font-size: 12.6rem;
+    font-weight: 500;
     line-height: 14.8rem;
 
     color: var(--text-color)
@@ -40,19 +40,37 @@ main {
     justify-content: center;
     align-items: center;
     margin: 30rem auto;
-    max-width: 820px;
-    gap: 192px;
+    max-width: 82rem;
+    gap: 19.2rem;
 }
-
-.timer-group {
-    flex: 1; 
+.timer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.7rem
+    
+}
+.button-set {
+    display: flex;
+    gap: 4rem;
 }
 
 .button-kind-sounds {
     display: grid;
     grid-template-columns: 6rem 6rem;
     grid-template-rows: 6rem 6rem;
-    gap: 3.2rem;
+    gap: 13rem; 
+    
+}
 
-    flex: 1;
+img {
+    border: 4px solid rgb(19, 18, 18);
+    border-radius: 15px;
+}
+
+img:hover {
+    border: 4px solid rgb(93, 203, 218);
+}
+
+img, svg{
+    cursor: pointer;
 }
