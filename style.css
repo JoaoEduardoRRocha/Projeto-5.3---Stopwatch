@@ -74,3 +74,38 @@ img:hover {
 img, svg{
     cursor: pointer;
 }
+
+body.dark {
+    background-color: black;
+    color: white;
+
+    transition: background 0.2s linear;
+}
+
+.dark-container {
+    position: fixed;
+    top: 0;
+    right: 1.5rem;
+}
+
+label {
+    background-color: black;
+    border-radius: 4rem;
+
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.5s linear;
+}
+
+body.dark label {
+    background-color: rgb(255, 255, 255);
+}
+
+input {
+    visibility: hidden;
+}
+
+

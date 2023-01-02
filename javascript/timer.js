@@ -1,9 +1,12 @@
 export default function Timer({
     minutesDisplay,
     secondsDisplay,
+    buttonPause,
+    buttonMore,
+    buttonLess,
+    controls
 }) {
     let timerTimeOut 
-
     let minutes = Number(minutesDisplay.textContent)
 
     function updateDisplay(newMinutes, seconds) {
@@ -12,7 +15,7 @@ export default function Timer({
         minutesDisplay.textContent = String(newMinutes).padStart(2, "0")
         secondsDisplay.textContent = String(seconds).padStart(2, "0")
     }
-
+    
     function countDown() {
         timerTimeOut = setTimeout(function() {
             let seconds =  Number(secondsDisplay.textContent)
@@ -21,14 +24,14 @@ export default function Timer({
 
             updateDisplay(minutes, 0)
 
-            if (isFinished) {
+            if(isFinished) {
                 /*resetControls()*/
                 updateDisplay()
                 /*Sounds()*/./*timeEnd()*/
                 return
               }
 
-            if( seconds <= 0 ) {
+            if(seconds <= 0) {
                 seconds = 60
                 --minutes
               }
@@ -40,8 +43,13 @@ export default function Timer({
         }, 1000)
     }
 
+    function pauseCountDown() {
+        clearInterval(timerTimeOut)
+    }
+        
     return {
         countDown,
-        updateDisplay,
+        updateDisplay, 
+        pauseCountDown,  
       }
 }

@@ -6,6 +6,8 @@ const buttonPause = document.querySelector(".pause")
 const buttonMore = document.querySelector(".more-five-minutes")
 const buttonLess = document.querySelector(".less-five-minutes")
 
+const darkMode = document.getElementById("dark-mode")
+
 
 export {
     minutesDisplay,
@@ -14,4 +16,6 @@ export {
     buttonPause,
     buttonMore,
     buttonLess,
+    darkMode
 }
+
