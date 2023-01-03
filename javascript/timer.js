@@ -7,6 +7,8 @@ export default function Timer({
     controls
 }) {
     let timerTimeOut;
+    let defaultMinutes = 30;
+    let defaultSeconds = 0;
     let minutes = 30;
     let seconds = 0;
     let isPlaying = false;
@@ -57,7 +59,7 @@ export default function Timer({
 
     function resetCountDown(){
         clearInterval(timerTimeOut)
-        updateDisplay(minutes, 0)
+        updateDisplay(defaultMinutes, defaultSeconds)
     }
 
     function addMinutes(){
