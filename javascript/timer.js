@@ -6,8 +6,10 @@ export default function Timer({
     buttonLess,
     controls
 }) {
-    let timerTimeOut 
-    let minutes = Number(minutesDisplay.textContent)
+    let timerTimeOut;
+    let minutes = 30;
+    let seconds = 0;
+    let isPlaying = false;
 
     function updateDisplay(newMinutes, seconds) {
         newMinutes = newMinutes === undefined ? minutes : newMinutes
@@ -18,8 +20,8 @@ export default function Timer({
     
     function countDown() {
         timerTimeOut = setTimeout(function() {
-            let seconds =  Number(secondsDisplay.textContent)
-            let minutes = Number(minutesDisplay.textContent)
+            seconds =  Number(secondsDisplay.textContent)
+            minutes = Number(minutesDisplay.textContent)
             let isFinished = minutes <= 0 && seconds <= 0
 
             updateDisplay(minutes, 0)
@@ -39,17 +41,39 @@ export default function Timer({
             updateDisplay(minutes, String(seconds - 1))
             
             countDown()
-
         }, 1000)
     }
 
-    function pauseCountDown() {
+    function startStopTimer(){
+        if(isPlaying){
+            isPlaying = false;
+            clearTimeout(timerTimeOut);
+            updateDisplay(minutes, seconds-1);
+        }else{
+            isPlaying = true;
+            countDown();
+        }
+    }
+
+    function resetCountDown(){
         clearInterval(timerTimeOut)
+        updateDisplay(minutes, 0)
+    }
+
+    function addMinutes(){
+        minutes += 5;
+        updateDisplay(minutes, seconds)
+    }
+
+    function removeMinutes(){
+        minutes -= 5;
+        updateDisplay(minutes, seconds)
     }
         
     return {
-        countDown,
-        updateDisplay, 
-        pauseCountDown,  
-      }
+        startStopTimer,
+        resetCountDown,
+        addMinutes,
+        removeMinutes,
+    }
 }

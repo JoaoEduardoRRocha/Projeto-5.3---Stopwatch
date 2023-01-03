@@ -17,11 +17,19 @@ initSoundsButtons()
 const timer = Timer({minutesDisplay, secondsDisplay, buttonPause, buttonMore})
 
 buttonPlay.addEventListener('click', function() {
-    timer.countDown()  
+    timer.startStopTimer()  
 })
 
 buttonPause.addEventListener('click', function() {
-    timer.pauseCountDown()
+    timer.resetCountDown()
+})
+
+buttonMore.addEventListener('click', function() {
+    timer.addMinutes()
+})
+
+buttonLess.addEventListener('click', function() {
+    timer.removeMinutes()
 })
 
 darkMode.addEventListener("change", (e) => {
